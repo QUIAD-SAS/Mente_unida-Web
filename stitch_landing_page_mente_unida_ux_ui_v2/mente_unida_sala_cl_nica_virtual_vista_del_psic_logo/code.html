@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:#bfc8c6;border-radius:10px;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#96d2ca", "tertiary": "#1e423d", "on-secondary-fixed-variant": "#7c2e19", "on-tertiary-fixed-variant": "#2a4d48", "surface": "#f2fbf9", "on-surface": "#141d1c", "on-tertiary": "#ffffff", "inverse-primary": "#96d2ca", "error-container": "#ffdad6", "secondary-container": "#fc9174", "on-surface-variant": "#3f4947", "background": "#f2fbf9", "outline": "#707977", "on-secondary-container": "#742814", "error": "#ba1a1a", "surface-container-high": "#e0eae8", "surface-tint": "#2b6862", "outline-variant": "#bfc8c6", "on-primary-fixed-variant": "#0a504a", "on-secondary-fixed": "#3c0800", "surface-bright": "#f2fbf9", "surface-container": "#e6f0ee", "on-primary-fixed": "#00201d", "primary": "#00443f", "on-primary": "#ffffff", "secondary": "#9a442d", "inverse-on-surface": "#e9f3f1", "secondary-fixed-dim": "#ffb4a1", "tertiary-fixed": "#c4eae4", "primary-fixed": "#b1eee6", "on-background": "#141d1c", "surface-container-lowest": "#ffffff", "surface-container-highest": "#dbe5e2", "inverse-surface": "#293231", "secondary-fixed": "#ffdbd2", "on-error-container": "#93000a", "on-tertiary-fixed": "#00201d", "on-tertiary-container": "#a9cec8", "tertiary-container": "#365954", "primary-container": "#1d5c56", "surface-dim": "#d2dcda", "on-error": "#ffffff", "on-secondary": "#ffffff", "surface-container-low": "#ecf6f4", "tertiary-fixed-dim": "#a9cec8", "surface-variant": "#dbe5e2", "primary-fixed-dim": "#96d2ca" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" }, "fontFamily": { "sans": [ "Plus Jakarta Sans", "Inter", "sans-serif" ], "body": [ "Inter", "sans-serif" ] } } } };</script></head><body class="bg-background font-sans text-on-surface antialiased min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed"><div class="flex min-h-screen">
+<!-- 1. LEFT SIDEBAR -->
+<aside class="fixed left-0 top-0 bottom-0 w-[260px] bg-surface-container-low border-r border-surface-container z-50 flex flex-col justify-between py-6 px-4">
+<div class="flex flex-col gap-7">
+<!-- Logo Container -->
+<div class="px-2 pt-1">
+<img alt="Mente Unida" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA816aIlCNxj0vy65tthdIOPQn_j4WCC-dqUH6NQtNd9HFlBs9dfEoDwFY_vFLX_0gv3YGfyFy9ZS6GpA7icJWpo_BTEZBb-ctqXwWtwp5ZA-wlT7CjjSUg7sd_kL3MZCPVn8MVTnIpcVaDB1HWai6jJ2Q8VROrYLX-9Iest50cWtUsfjZfqnjL_Jq-qgy1caYNcXKe5B6niKMkiJs-Rro96SFfyi8UxXvcMRBO-tMTqFrPM-iAlQ5L"/>
+</div>
+<!-- Navigation Menu -->
+<nav class="flex flex-col gap-1.5">
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+<span>Inicio</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span>Agenda / Citas</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">clinical_notes</span>
+<span>Pacientes</span>
+</a>
+<!-- Active Nav Item -->
+<a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-primary-container text-white shadow-sm font-semibold text-sm" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+<span>Sesión Clínica Activa</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">diversity_1</span>
+<span>Supervisión / Red</span>
+</a>
+</nav>
+</div>
+<!-- Verified Psychologist Profile Card -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm border border-surface-container flex flex-col gap-2.5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-sm">
+          CM
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="text-sm font-semibold text-on-surface truncate">Dr. Carlos Morales</span>
+<span class="text-xs text-on-surface-variant truncate">Psicólogo Clínico</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-surface-container-low text-xs">
+<span class="font-mono text-[11px] text-outline">TP-108429-COL</span>
+<span class="inline-flex items-center gap-1 bg-surface-container-low text-primary px-2 py-0.5 rounded-full font-medium text-[11px]">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+          Verificado
+        </span>
+</div>
+</div>
+</aside>
+<!-- MAIN VIEWPORT (Offset by sidebar width 260px) -->
+<div class="pl-[260px] flex-1 flex flex-col min-w-0 bg-surface">
+<!-- 2. TOP BAR (Main Content Header) -->
+<header class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-surface-container px-6 py-3 flex items-center justify-between gap-4">
+<!-- Left: Patient Name, Session Counter & Timer -->
+<div class="flex items-center flex-wrap gap-2.5 sm:gap-3">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-full border border-surface-container shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs sm:text-sm font-medium text-on-surface-variant">Sesión Clínica Activa:</span>
+<span class="text-xs sm:text-sm font-bold text-on-surface">Mariana Gómez Restrepo</span>
+</div>
+<span class="inline-flex items-center text-xs font-semibold bg-surface-container px-2.5 py-1 rounded-full text-on-surface-variant">
+          Sesión 4 / 12
+        </span>
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-3 py-1 rounded-full border border-surface-container text-xs font-medium text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-primary text-[17px]">timer</span>
+<span class="font-mono font-bold" id="sessionTimer">38:42</span>
+<span class="text-outline">/ 50:00</span>
+</div>
+</div>
+<!-- Right: Status badges, Emergency pill & Subtle End button -->
+<div class="flex items-center flex-wrap gap-2.5">
+<div class="hidden md:flex items-center gap-1.5 bg-primary-fixed/30 text-primary px-3 py-1 rounded-full text-xs font-medium">
+<span class="material-symbols-outlined text-[15px]">lock</span>
+<span>Cifrado médico AES-256</span>
+</div>
+<div class="hidden lg:flex items-center gap-1.5 bg-secondary-fixed/40 text-on-secondary-fixed-variant px-3 py-1 rounded-full text-xs font-medium border border-secondary-fixed-dim/40">
+<span class="material-symbols-outlined text-[15px]">contact_emergency</span>
+<span>Emergencia: Roberto G. (Hermano)</span>
+<a class="font-mono font-bold hover:underline ml-0.5 text-secondary" href="tel:3109876543">310 987 6543</a>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-error/40 text-error hover:bg-error hover:text-white transition-all text-xs font-semibold shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">call_end</span>
+<span>Finalizar Sesión</span>
+</button>
+</div>
+</header>
+<!-- CONTENT WRAPPER -->
+<main class="p-6 flex flex-col gap-6 max-w-[1600px] w-full mx-auto">
+<!-- 3. VIDEO CONFERENCE (LARGE, PROMINENT ON TOP) -->
+<section class="flex flex-col gap-3 w-full">
+<div class="relative w-full h-[450px] sm:h-[480px] bg-inverse-surface rounded-2xl overflow-hidden shadow-md flex items-center justify-center border border-surface-container-high">
+<!-- Patient Video Stream -->
+<img alt="Mariana Gómez en videoconsulta clínica" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkA2VHYfPRVTOPiw4vDrEwHZIugfLzNGoU77sufe9DQXOrEbdLiX8HmPIhSVQtIR8Kzh73k4SfJHYqXR4Cr8w34jWXsttJxoYhBx8tbjWoPb6xQhD0AQPFquOjmvZu42vP0kYhFjOc8-KAD_CJ8yEP1rO2nFBl9Jju6QbWrlbE-3RrVYCEd46CLj4cYN3G_7Gyymc-1yJyOhYYGDt5B3LJByMMs6dNv8LIkirxLw8"/>
+<!-- Top-Left Discreet Badge -->
+<div class="absolute top-4 left-4 flex items-center gap-1.5 bg-inverse-surface/80 backdrop-blur-md px-3 py-1.5 rounded-full text-inverse-on-surface shadow-sm border border-white/10">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[16px]">wifi</span>
+<span class="text-xs font-medium tracking-tight">Conexión HD Estable (1080p)</span>
+</div>
+<!-- Top-Right Floating PIP: Dr. Carlos Morales -->
+<div class="absolute top-4 right-4 w-48 sm:w-56 aspect-[4/3] bg-surface-container-low rounded-xl overflow-hidden shadow-2xl ring-2 ring-white/90">
+<img alt="Dr. Carlos Morales - Previsualización terapeuta" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOqpiGe9-U40i_dSnHXS9vxUTYpzv6Yx9EY8NKxx8ekKFKwR_llXQgiozrnwVpcXoX0u8egvy9a-TZCVjc21FDgBITfRu0nuuyIcGrjGky5006UEnYf0Tk3DfxwkHkTAw3bUf5arKgQatADfw3UBnytYPhAYfCKkoG4TCuX1EKgW_9FTEEYoCoZDk0nJGCfrC8RROJcNtfu2yLL1sxEALzKdGdWRebo9sdrWVOEUQ"/>
+<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between bg-inverse-surface/85 backdrop-blur-sm px-2.5 py-1 rounded-md text-inverse-on-surface text-[11px]">
+<span class="truncate font-medium">Tú (Dr. Morales)</span>
+<span class="material-symbols-outlined text-[13px] text-primary-fixed-dim">mic</span>
+</div>
+</div>
+<!-- Bottom-Left Patient Audio Indicator -->
+<div class="absolute bottom-4 left-4 flex items-center gap-2.5 bg-inverse-surface/85 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-inverse-on-surface border border-white/10">
+<div class="flex items-center gap-1">
+<span class="w-1 h-3 bg-primary-fixed-dim rounded-full animate-bounce"></span>
+<span class="w-1 h-4 bg-primary-fixed-dim rounded-full animate-bounce [animation-delay:0.15s]"></span>
+<span class="w-1 h-2.5 bg-primary-fixed-dim rounded-full animate-bounce [animation-delay:0.3s]"></span>
+</div>
+<span class="text-xs font-semibold text-inverse-on-surface">Mariana Gómez</span>
+<span class="text-[11px] text-surface-container-high hidden sm:inline">• Micrófono activo</span>
+</div>
+</div>
+<!-- Video Controls Bar (Clean & Essential) -->
+<div class="bg-surface-container-lowest rounded-2xl px-5 py-3 shadow-sm border border-surface-container flex items-center justify-between flex-wrap gap-3">
+<!-- Audio & Video hardware triggers -->
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center w-10 h-10 rounded-xl bg-primary text-white hover:bg-primary-container transition-all shadow-sm" id="toggleMic" title="Silenciar Micrófono" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-xl bg-primary text-white hover:bg-primary-container transition-all shadow-sm" id="toggleCam" title="Cámara" type="button">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Salida de Audio" type="button">
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+</button>
+</div>
+<!-- Clinical Interaction tools -->
+<div class="flex items-center gap-2 flex-wrap">
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface-container-low text-primary hover:bg-surface-container transition-colors text-xs font-semibold border border-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">present_to_all</span>
+<span>Compartir Pantalla</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-secondary-fixed/40 text-on-secondary-fixed-variant hover:bg-secondary-fixed transition-colors text-xs font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">self_improvement</span>
+<span>Enviar Pausa Guiada</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors text-xs font-semibold border border-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+<span>Pizarra Clínica</span>
+</button>
+</div>
+<!-- End Call Button (Red) -->
+<div>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-error text-white hover:bg-error/90 transition-all text-xs font-bold shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">call_end</span>
+<span>Finalizar Sesión</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4. LOWER SECTION SPLIT INTO EXACTLY 2 EQUAL-WIDTH COLUMNS -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+<!-- COLUMN 1: Notas Clínicas de la Sesión -->
+<section class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-surface-container flex flex-col gap-4">
+<!-- Card Header -->
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-primary-container text-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</div>
+<div>
+<h2 class="text-base font-bold text-on-surface">Notas de la Sesión de Hoy</h2>
+<p class="text-xs text-on-surface-variant">Apuntes clínicos inmediatos y acuerdos</p>
+</div>
+</div>
+<!-- Auto-save indicator -->
+<span class="inline-flex items-center gap-1.5 text-xs text-primary bg-primary-fixed/35 px-2.5 py-1 rounded-full font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Autoguardado activo
+            </span>
+</div>
+<!-- Textarea area -->
+<div class="flex flex-col gap-2">
+<label class="text-xs font-semibold text-on-surface" for="sessionNotesArea">
+              Observaciones, evolución y tareas acordadas:
+            </label>
+<textarea class="w-full bg-surface-container-low rounded-xl p-4 text-sm text-on-surface resize-none focus:outline-none focus:ring-2 focus:ring-primary-container/30 border border-surface-container leading-relaxed font-body" id="sessionNotesArea" rows="12">Mariana reporta sentirse mucho más tranquila esta semana. Practicó el ejercicio de respiración 4-7-8 antes de dormir con buena adherencia y logró conciliar el sueño con mayor facilidad. Se reduce la sensación de tensión en el pecho matutina.
+
+Durante la sesión se muestra comunicativa y receptiva. Hablamos sobre la exigencia en el trabajo y definimos límites en el horario de revisión de correos electrónicos.
+
+Tarea acordada para la próxima semana: continuar con el registro de pensamientos automáticos ante correos urgentes.</textarea>
+</div>
+<!-- Action bar -->
+<div class="flex items-center justify-between gap-3 pt-2">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">lock</span>
+<span>Privado y confidencial (Ley 1090 de 2006)</span>
+</div>
+<button class="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-primary-container text-white hover:bg-primary transition-all text-xs font-bold shadow-sm" id="saveNotesBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_added</span>
+<span>Guardar e incorporar al historial</span>
+</button>
+</div>
+</section>
+<!-- COLUMN 2: Ficha del Paciente (Datos Básicos + Atención con Otros Doctores) -->
+<section class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-surface-container flex flex-col gap-4">
+<!-- Card Header -->
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-primary-fixed text-primary flex items-center justify-center font-bold text-sm">
+                MG
+              </div>
+<div>
+<h2 class="text-base font-bold text-on-surface">Ficha del Paciente</h2>
+<p class="text-xs text-on-surface-variant">Registro integral y seguimiento interdisciplinar</p>
+</div>
+</div>
+<span class="bg-surface-container-low text-primary border border-surface-container text-xs font-mono px-2.5 py-1 rounded-full font-semibold">
+              Exp. #HC-2024-089
+            </span>
+</div>
+<!-- BLOCK A: Datos Básicos del Paciente -->
+<div class="bg-surface-container-low/70 rounded-xl p-3.5 border border-surface-container flex flex-col gap-2.5">
+<div class="flex items-center justify-between border-b border-surface-container/60 pb-1.5">
+<span class="text-xs font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">badge</span>
+                Datos Básicos del Paciente
+              </span>
+<span class="text-[11px] text-outline">Registrado en la plataforma</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+<div class="flex flex-col">
+<span class="text-outline text-[11px]">Nombre Completo</span>
+<span class="font-semibold text-on-surface">Mariana Sofía Gómez Restrepo</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline text-[11px]">Documento</span>
+<span class="font-mono font-medium text-on-surface">CC 1.020.485.920</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline text-[11px]">Edad / F. Nacimiento</span>
+<span class="text-on-surface">28 años (14 May 1996)</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline text-[11px]">Contacto &amp; Ubicación</span>
+<span class="text-on-surface font-mono text-[11px]">+57 312 458 9201 · Bogotá, Colombia</span>
+</div>
+<div class="col-span-1 sm:col-span-2 flex items-center justify-between pt-1 border-t border-surface-container/50 bg-secondary-fixed/20 -mx-1.5 px-2 py-1 rounded-lg">
+<span class="text-outline text-[11px]">Contacto de Emergencia:</span>
+<span class="font-medium text-on-surface text-xs">
+                  Roberto Gómez (Hermano) — <a class="font-mono font-bold text-secondary hover:underline" href="tel:3109876543">310 987 6543</a>
+</span>
+</div>
+</div>
+</div>
+<!-- BLOCK B: Interdisciplinar / Atención con otros Profesionales (CLEARLY VISIBLE) -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 border-2 border-primary/20 bg-primary-fixed/10 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-primary">groups_3</span>
+                Atención Interdisciplinaria / Otros Especialistas
+              </span>
+<span class="bg-primary-fixed text-primary text-[10px] font-bold px-2 py-0.5 rounded-full">
+                En tratamiento activo conjunto
+              </span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-3 border border-surface-container flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">medical_services</span>
+<span class="text-xs font-bold text-on-surface">Psiquiatría: Dra. Elena Salcedo</span>
+</div>
+<span class="text-[11px] text-outline font-medium">Control mensual activo</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface">Diagnóstico / Motivo interconsulta:</strong> Manejo farmacológico coadyuvante para episodios agudos de ansiedad e insomnio. Control mensual activo. Última fórmula: 12 Octubre.
+              </p>
+</div>
+</div>
+<!-- BLOCK C: Motivo de Consulta Inicial & Progreso -->
+<div class="bg-surface-container-low rounded-xl p-3.5 border border-surface-container flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">flag</span>
+                Motivo de Consulta Inicial &amp; Progreso
+              </span>
+<span class="text-[11px] font-semibold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded-full">
+                4 de 12 sesiones realizadas
+              </span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+              Manejo de episodios agudos de ansiedad, tensión física e insomnio crónico vinculados a sobrecarga laboral tras ascenso como líder técnica.
+            </p>
+<!-- Progress bar visual -->
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden mt-1">
+<div class="bg-primary h-full rounded-full transition-all" style="width: 33.3%;"></div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</div>
+<script>
+  (function() {
+    // Session Timer Simulation
+    let totalSeconds = 38 * 60 + 42;
+    const timerElem = document.getElementById('sessionTimer');
+    if (timerElem) {
+      setInterval(() => {
+        totalSeconds++;
+        const mins = Math.floor(totalSeconds / 60);
+        const secs = totalSeconds % 60;
+        timerElem.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      }, 1000);
+    }
+
+    // Toggle Mic visual state
+    const toggleMic = document.getElementById('toggleMic');
+    if (toggleMic) {
+      toggleMic.addEventListener('click', () => {
+        const icon = toggleMic.querySelector('.material-symbols-outlined');
+        if (icon.textContent === 'mic') {
+          icon.textContent = 'mic_off';
+          toggleMic.classList.remove('bg-primary');
+          toggleMic.classList.add('bg-error');
+        } else {
+          icon.textContent = 'mic';
+          toggleMic.classList.remove('bg-error');
+          toggleMic.classList.add('bg-primary');
+        }
+      });
+    }
+
+    // Toggle Cam visual state
+    const toggleCam = document.getElementById('toggleCam');
+    if (toggleCam) {
+      toggleCam.addEventListener('click', () => {
+        const icon = toggleCam.querySelector('.material-symbols-outlined');
+        if (icon.textContent === 'videocam') {
+          icon.textContent = 'videocam_off';
+          toggleCam.classList.remove('bg-primary');
+          toggleCam.classList.add('bg-error');
+        } else {
+          icon.textContent = 'videocam';
+          toggleCam.classList.remove('bg-error');
+          toggleCam.classList.add('bg-primary');
+        }
+      });
+    }
+
+    // Save notes button feedback
+    const saveNotesBtn = document.getElementById('saveNotesBtn');
+    if (saveNotesBtn) {
+      saveNotesBtn.addEventListener('click', () => {
+        const originalHtml = saveNotesBtn.innerHTML;
+        saveNotesBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Guardado con Éxito</span>';
+        saveNotesBtn.classList.remove('bg-primary-container');
+        saveNotesBtn.classList.add('bg-tertiary');
+        setTimeout(() => {
+          saveNotesBtn.innerHTML = originalHtml;
+          saveNotesBtn.classList.remove('bg-tertiary');
+          saveNotesBtn.classList.add('bg-primary-container');
+        }, 2200);
+      });
+    }
+  })();
+</script></body></html>
